@@ -1,13 +1,13 @@
 module.exports = {
   port: process.env.PORT || 8081,
   db: {
-    database: process.env.DB_NAME || 'portfolioDb',
+    database: process.env.DB_NAME || 'node-forums',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASS || '',
     options: {
       dialect: process.env.DIALECT || 'sqlite',
       host: process.env.HOST || 'localhost',
-      storage: './portfolio.sqlite'
+      storage: './nodeForums.sqlite'
     }
   },
   authentication: {
