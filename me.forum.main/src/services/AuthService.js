@@ -7,5 +7,8 @@ export default {
   },
   index () {
     return Api().get('admin/users')
+  },
+  register (creds) {
+    return Api().post('register', creds)
   }
 }

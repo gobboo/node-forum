@@ -1,13 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index/Index'
-import Login from '@/components/Login/Index'
-import NewBlog from '@/components/NewBlog/Index'
-import ViewBlog from '@/components/ViewBlog/Index'
-import EditBlog from '@/components/EditBlog/Index'
-import Blogs from '@/components/Blogs/Index'
-import Resume from '@/components/Resume/Index'
-import Users from '@/components/Admin/Users/Index'
+import Forum from '@/components/Forums/Index'
+import Login from '@/components/Authentication/Login'
+import Register from '@/components/Authentication/Register'
 
 Vue.use(Router)
 
@@ -17,42 +12,17 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Index
+      component: Forum
     },
     {
-      path: '/admin/login',
+      path: '/login',
       name: 'Login',
       component: Login
     },
     {
-      path: '/blogs',
-      name: 'Blogs',
-      component: Blogs
-    },
-    {
-      path: '/blogs/new',
-      name: 'NewBlog',
-      component: NewBlog
-    },
-    {
-      path: '/blog/:blogId',
-      name: 'ViewBlog',
-      component: ViewBlog
-    },
-    {
-      path: '/blog/:blogId/edit',
-      name: 'EditBlog',
-      component: EditBlog
-    },
-    {
-      path: '/resume',
-      name: 'Resume',
-      component: Resume
-    },
-    {
-      path: '/admin/users',
-      name: 'Users',
-      component: Users
+      path: '/register',
+      name: 'Register',
+      component: Register
     }
   ]
 })

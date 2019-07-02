@@ -1,30 +1,35 @@
 <template>
 
   <v-toolbar relative dark class="primary">
-    <v-btn icon href="https://github.com/Mobles" target="_blank"><v-icon>fab fa-github</v-icon></v-btn>
-    <v-btn icon href="https://twitter.com/stubbingssamuel" target="_blank"><v-icon>fab fa-twitter</v-icon></v-btn>
+    <h2 class="heading">Node Forums</h2>
 
     <v-spacer/>
     
     <v-toolbar-items>
-      <v-btn flat to="/">Home</v-btn>
-      <v-btn flat to="/blogs">Blogs</v-btn>
-      <v-btn flat to="/resume">Resume</v-btn>
-      <v-btn flat v-if="$store.state.isUserLoggedIn"  @click="logout">Logout</v-btn>
+      <v-btn flat to="/">Forums</v-btn>
+      <v-btn flat v-if="!$store.state.isUserLoggedIn" to="/login">Login</v-btn>
+      <v-btn flat v-if="!$store.state.isUserLoggedIn" to="/register">Sign Up</v-btn>
+      <profile v-if="$store.state.isUserLoggedIn"></profile>
+      <v-btn flat v-if="$store.state.isUserLoggedIn" @click="logout">Logout</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
 
 <script>
+import Profile from './Profile'
+
 export default {
   methods: {
     logout () {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)
       this.$router.push({
-        name: 'Index'
+        name: 'Forum'
       })
     }
+  },
+  components: {
+    Profile
   }
 }
 </script>
