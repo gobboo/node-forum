@@ -41,7 +41,7 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-
+        <v-btn flat v-if="$store.state.isUserLoggedIn" to="/admin" @click="menu = false">Admin CP</v-btn>
         <v-btn flat to="/profile/settings" @click="menu = false">Settings</v-btn>
         <v-btn color="primary" flat to="/profile" @click="menu = false">Profile</v-btn>
       </v-card-actions>

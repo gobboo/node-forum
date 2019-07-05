@@ -6,7 +6,7 @@ module.exports = {
       email: Joi.string().email(),
       username: Joi.string().alphanum().min(4).max(12).required(),
       password: Joi.string().regex(
-        new RegExp('^[a-zA-Z0-9]{8,32}$')
+        new RegExp('^(?=.*).{8,32}$')
       )
     }
 
@@ -26,7 +26,7 @@ module.exports = {
           break
         case 'password':
           res.status(400).send({
-            error: 'The password must contain only alphanumeric characters and have 8 - 32 characters.'
+            error: 'The password must have 8 - 32 characters and at least one digit.'
           })
           break
         default:

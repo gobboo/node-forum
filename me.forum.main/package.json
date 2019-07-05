@@ -21,6 +21,7 @@
     "vue": "^2.6.10",
     "vue-perfect-scrollbar": "^0.1.0",
     "vue-router": "^3.0.6",
+    "vuelidate": "^0.7.4",
     "vuescroll": "^4.13.0",
     "vuetify": "^1.5.14",
     "vuex": "^3.1.1",

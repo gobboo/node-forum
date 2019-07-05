@@ -18,14 +18,8 @@ function hashPassword (user) {
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    email: {
-      type: DataTypes.STRING,
-      unique: true
-    },
-    username: {
-      type: DataTypes.STRING,
-      unique: true
-    },
+    email: DataTypes.STRING,
+    username: DataTypes.STRING,
     password: DataTypes.STRING,
     profilePicture: DataTypes.TEXT,
     bio: DataTypes.TEXT,
@@ -35,7 +29,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     hooks: {
       beforeSave: hashPassword
-    }
+    },
+    indexes: [
+      {
+        unique: true,
+        fields: ['email', 'username']
+      }
+    ]
+
   })
 
   User.prototype.comparePassword = function (password) {
