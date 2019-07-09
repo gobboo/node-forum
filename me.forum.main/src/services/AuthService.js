@@ -10,5 +10,8 @@ export default {
   },
   register (creds) {
     return Api().post('register', creds)
+  },
+  activate (secret) {
+    return Api().post('activate', secret)
   }
 }

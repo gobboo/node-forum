@@ -94,8 +94,9 @@ module.exports = {
       })
       
       if(!confirmation) {
-        res.status(403).send({
-          error: 'This verification token is invalid.'
+        res.status(200).send({
+          status: 200,
+          message: 'This activation token is invalid, it may not exist or has expired.'
         })
         return;
       }
@@ -118,7 +119,8 @@ module.exports = {
       })
 
       res.send({
-        success: "Your account has successfully been activated."
+        status: 201,
+        message: "Your account has now be successfully activated, you can now log in freely."
       })
     } catch (err) {
       console.log(err)

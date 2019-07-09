@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     username: DataTypes.STRING,
     password: DataTypes.STRING,
-    profilePicture: DataTypes.TEXT,
+    profilePicture: {type: DataTypes.TEXT, defaultValue: 'https://placeimg.com/256/256/any'},
     bio: DataTypes.TEXT,
-    role: DataTypes.STRING,
+    role: {type: DataTypes.STRING, defaultValue: 'member'},
     createdThreads: {type: DataTypes.INTEGER, defaultValue: 0},
     active: {type: DataTypes.INTEGER, defaultValue: 0}
   }, {

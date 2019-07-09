@@ -1,6 +1,6 @@
 <template>
 
-  <v-toolbar relative dark class="primary">
+  <v-toolbar relative dark class="blue">
     <h2 class="heading">Node Forums</h2>
 
     <v-spacer/>
